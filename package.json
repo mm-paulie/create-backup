@@ -8,7 +8,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "test"
+    "test": "index"
   },
   "author": "",
   "license": "ISC"
