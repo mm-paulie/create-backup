@@ -9,7 +9,7 @@ async function run() {
         ]});
 
     let page = await browser.newPage();
-    await page.goto('http://richmedia-previews-s3bucket-khpmpnjb2dya.s3.amazonaws.com/4d06fe14-676d-4d44-a3a4-442e7e1d8c76/test_paulie/index.html');
+    await page.goto('https://paypal-holiday-2020.ap.dev.monkapps.com/v5_ja_jp/');
 
 
     //first do a click on each banner to go to the endframe
@@ -20,31 +20,25 @@ async function run() {
         let curFrame = await curPage[i].contentFrame();
         let t = await curPage[i];
         await curFrame.click('.mainExit');
+        // await page.click('.page-content')
+        // await page.waitFor(2000);
+        await page.bringToFront();
+        // blockingWait(1);
 
-
-
-        i++;
-    }
-    await page.click('.page-content')
-    // await page.waitFor(2000);
-    // await page.bringToFront();
-
-    //take a screenshot of each endframe
-    let j = 0;
-    for (const frame of page.mainFrame().childFrames()) {
         let frameUrl = await frame.url().split("/");
-        let curPage = await page.$$("iframe");
-        let curFrame = await curPage[j].contentFrame();
 
-        let box = await curPage[j].boxModel()
+        let box = await curPage[i].boxModel()
+
         await page.screenshot({
             quality: 100,
             path: './' + frameUrl[frameUrl.length - 2] + '.jpg',
             type: 'jpeg',
             clip: {x: box.content[0].x, y: box.content[0].y, width: box.width, height: box.height}
         });
-        j++;
+
+        i++;
     }
+
     await page.close();
     await browser.close();
 }
