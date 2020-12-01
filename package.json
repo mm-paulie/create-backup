@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "inquirer": "^7.3.3",
     "puppeteer": "^5.4.1"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "index"
+    "screenshot": "node screenshot.js"
   },
   "author": "",
   "license": "ISC"
