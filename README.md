@@ -2,3 +2,6 @@
 
 # Description
 tool to create backup images from iframes with puppeteer
+
+# To use
+run 'node screenshot.js' in your terminal and answer the questions
