@@ -76,12 +76,15 @@ async function run(obj) {
         let curFrame = await curPage[i].contentFrame();
         let t = await curPage[i];
 
-        await curFrame.click(obj.exitElement);
+        await curFrame.click(obj.exitElement, {});
+
         await page.bringToFront();
 
         let frameUrl = await frame.url().split("/");
         let box = await curPage[i].boxModel()
 
+        //if there is a hover state we want to not show this in the screenshot so therefore we move the mouse away of the banner frame
+        await page.mouse.move(box.width + 1000,box.height + 1000)
 
         obj.pathUrl = (obj.pathUrl.charAt(obj.pathUrl.length-1).match(/\\/) != null) ? obj.pathUrl : obj.pathUrl + '\\';
 
