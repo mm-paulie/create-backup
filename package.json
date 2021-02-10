@@ -1,16 +1,19 @@
 {
   "name": "@paulie/create-backup",
   "version": "3.1.0",
-  "description": "",
-  "main": "index.js",
+  "description": "a module for creating backup images for banners",
+  "main": "./lib/index.js",
   "dependencies": {
     "inquirer": "^7.3.3",
     "puppeteer": "^5.4.1"
   },
   "devDependencies": {},
   "scripts": {
-    "screenshot": "node screenshot.js"
+    "backup": "node ./lib/index.js"
   },
-  "author": "",
+  "bin": {
+    "backup": "./bin/global.js"
+  },
+  "author": "mm-paulie",
   "license": "ISC"
 }
