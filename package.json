@@ -1,6 +1,6 @@
 {
   "name": "@paulie/create-backup",
-  "version": "3.1.2",
+  "version": "3.1.3",
   "description": "a module for creating backup images for banners",
   "main": "./lib/index.js",
   "dependencies": {
