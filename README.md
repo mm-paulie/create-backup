@@ -5,7 +5,7 @@ Tool to create backup images from iframes with puppeteer
 
 # Installation
 ```sh
-npm install -g @mm-paulie/create-backup
+npm install -g  https://github.com/mm-paulie/create-backup.git
 ```
 
 # To use
