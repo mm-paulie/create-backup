@@ -5,7 +5,7 @@
   "main": "./lib/index.js",
   "dependencies": {
     "inquirer": "^7.3.3",
-    "puppeteer": "^5.4.1"
+    "puppeteer": "^5.5.0"
   },
   "devDependencies": {},
   "scripts": {
